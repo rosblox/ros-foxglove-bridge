@@ -5,6 +5,7 @@ FROM ros:${ROS_DISTRO}-ros-base AS builder
 WORKDIR /colcon_ws
 
 RUN git clone https://github.com/stereolabs/zed-ros2-interfaces.git src/zed_interfaces && \
+    git clone https://github.com/rosblox/rslidar_msg.git src/rslidar_msg && \
     . /opt/ros/${ROS_DISTRO}/setup.sh && \
     colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --event-handlers console_direct+
 
