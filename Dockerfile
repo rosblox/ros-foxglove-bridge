@@ -24,6 +24,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /colcon_ws/install/zed_interfaces /opt/ros/${ROS_DISTRO}
+COPY --from=builder /colcon_ws/install/rslidar_msg /opt/ros/${ROS_DISTRO}
 
 COPY ros_entrypoint.sh .
 
