@@ -12,6 +12,8 @@ jobs:
       -
         name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -32,4 +34,4 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/${{ github.event.repository.name }}:humble
+          tags: ghcr.io/rosblox/${{ github.event.repository.name }}:humble
