@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-geometry-msgs \
     ros-${ROS_DISTRO}-sensor-msgs \
     ros-${ROS_DISTRO}-rosbridge-msgs \
+    ros-${ROS_DISTRO}-rosbag2-interfaces \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /colcon_ws/install/zed_interfaces /opt/ros/${ROS_DISTRO}
