@@ -22,6 +22,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     ros-${ROS_DISTRO}-sensor-msgs \
     ros-${ROS_DISTRO}-rosbridge-msgs \
     ros-${ROS_DISTRO}-rosbag2-interfaces \
+    ros-${ROS_DISTRO}-controller-manager-msgs \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=builder /colcon_ws/install/zed_msgs /opt/ros/${ROS_DISTRO}
